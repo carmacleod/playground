@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Table with checkbox column</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			border-spacing: 0px;
+		}
+		table, th, td {
+			padding: 5px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Table with checkbox column</h1>
+	<p>
+		Table with checkboxes in one column.<br>
+		Do screen readers say column header for checkbox cell?
+	</p>
+	<table>
+		<thead>
+			<tr><th>Name</th><th>Address</th><th>Phone</th><th>Paid</th></tr>
+		</thead>
+		<tbody>
+			<tr><td>Fred</td><td>10 Bedrock</td><td>123</td><td><input type="checkbox"></input></td></tr>
+			<tr><td>Wilma</td><td>10 Bedrock</td><td>123</td><td><input type="checkbox"></input></td></tr>
+			<tr><td>Barney</td><td>12 Bedrock</td><td>456</td><td><input type="checkbox"></input></td></tr>
+			<tr><td>Betty</td><td>12 Bedrock</td><td>456</td><td><input type="checkbox"></input></td></tr>
+		</tbody>
+	</table>
+</body>
+</html>
