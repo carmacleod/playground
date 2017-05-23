@@ -17,17 +17,17 @@
 <body>
 	<h1>Table with checkbox column</h1>
 	<p>
-		Table with checkboxes in one column.<br>
+		Table with checkboxes (with varied markup) in one column.<br>
 		Do screen readers say column header for checkbox cell?
 	</p>
 	<table>
 		<thead>
-			<tr><th>Name<th>Address<th>Phone<th>Paid</tr>
+			<tr><th>First name<th>Last name<th>Address<th>Paid</tr>
 		<tbody>
-			<tr><td>Fred<td>10 Bedrock<td>123<td><input type="checkbox"></tr>
-			<tr><td>Wilma<td>10 Bedrock<td>123<td><input type="checkbox"></tr>
-			<tr><td>Barney<td>12 Bedrock<td>456<td><label><input type="checkbox"></label></tr>
-			<tr><td>Betty<td>12 Bedrock<td>456<td><label><input type="checkbox"></label></tr>
+			<tr><td>Fred<td>Flintstone<td>301 Cobblestone Way<td><input type="checkbox"></tr>
+			<tr><td>Wilma<td>Flintstone<td>301 Cobblestone Way<td><input type="checkbox"></tr>
+			<tr><td>Barney<td>Rubble<td>303 Cobblestone Way<td><label><input type="checkbox"></label></tr>
+			<tr><td>Betty<td>Rubble<td>303 Cobblestone Way<td><label role="presentation"><input type="checkbox"></label></tr>
 	</table>
 </body>
 </html>
