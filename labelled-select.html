@@ -2,33 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Examples of label for</title>
+	<title>Label for</title>
 </head>
 <body>
 	<main>
-	<h1>Label for</h1>
-
-	<h2>Label for select</h2>
-	<div>
-		<label for="select1">Select something</label>
-		<select id="select1">
-			<option>Option 1</option>
-			<option>Option 2</option>
-			<option>Option 3</option>
-			<option>Option 4</option>
-		</select>
-	</div>
-	<div>
-		<label for="select2">Select something</label>
-		<span>(but there's a span here)</span>
-		<select id="select2">
-			<option>Option 1</option>
-			<option>Option 2</option>
-			<option>Option 3</option>
-			<option>Option 4</option>
-		</select>
-	</div>
-	
+	<h1>Label for select</h1>
+		<div class="form-group">
+			<label for="inputtype">Input Type</label>
+			<span tabindex="0" alt="Input Type help">
+				<svg fill="#888" aria-labelledby="title-azkft" aria-describedby="desc-azkft" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+					<title id="title-azkft">Information</title>
+					<desc id="desc-azkft">Click to toggle additional information</desc>
+					<g>
+						<path class="st0" d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7C15,4.1,11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6   c0-3.3,2.7-6,6-6c3.3,0,6,2.7,6,6C14,11.3,11.3,14,8,14z"></path>
+						<circle class="st0" cx="8" cy="5" r="1"></circle>
+						<polygon class="st0" points="9,7 7,7 6,7 6,8 7,8 7,11 6,11 6,12 7,12 9,12 10,12 10,11 9,11"></polygon>
+					</g>
+				</svg>
+			</span>
+			<div class="select-wrapper">
+				<div class="caret-container">
+					<span class="caret"></span>
+				</div>
+				<select class="form-control" name="inputtype" id="inputtype" data-input-type="scm" data-analytics-label="Input Type select">
+					<option value="none" data-analytics-label="None">None</option>
+					<option value="scm" selected="" data-analytics-label="Git Repository">Git Repository</option>
+					<option value="job" data-analytics-label="Job Output" disabled="disabled">Build Artifacts</option>
+				</select>
+			</div>
+			<div class="help-text">Select the input type for all of the jobs in this stage. Before a job is run, the input files are loaded and placed into the job's working directory.</div>
+		</div>
 	</main>
 </body>
 </html>
