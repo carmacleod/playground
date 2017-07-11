@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hidden label for text input</title>
+	<style>
+		.hidden1 {display: none;}
+		.hidden2 {visibility: hidden;}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Hidden labels for text inputs</h1>
+
+		<h2>1) Label hidden with display: none;</h2>
+		<label for="text1" class="hidden1">Label for Text1</label>
+		<input id="text1" value="Text input 1">
+
+		<h2>2) Label hidden with visibility: hidden;</h2>
+		<label for="text2" class="hidden2">Label for Text2</label>
+		<input id="text2" value="Text input 2">
+
+		<h2>3) Label hidden with html5 'hidden' attribute</h2>
+		<label for="text3" hidden>Label for Text3</label>
+		<input id="text3" value="Text input 3">
+
+		<h2>4) Label hidden with display: none; and pointed to by 'aria-labelledby'</h2>
+		<label for="text4" id="label4" class="hidden1">Label for Text4</label>
+		<input id="text4" aria-labelledby="label4" value="Text input 4">
+
+		<h2>5) Label hidden with visibility: hidden; and pointed to by 'aria-labelledby'</h2>
+		<label for="text5" id="label5" class="hidden2">Label for Text5</label>
+		<input id="text5" aria-labelledby="label5" value="Text input 5">
+
+		<h2>6) Label hidden with html5 'hidden' attribute, and pointed to by 'aria-labelledby'</h2>
+		<label for="text6" id="label6" hidden>Label for Text6</label>
+		<input id="text6" aria-labelledby="label6" value="Text input 6">
+
+		<h2>7) Label using 'aria-label' attribute, and no label element</h2>
+		<input aria-label="Label for Text7" value="Text input 7">
+
+	</main>
+</body>
+</html>
