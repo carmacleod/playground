@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>keystroke test</h1>
+	<p>Type something.</p>
+	<label for="input">You typed:</label>
+	<input type="text" id="input" placeholder="Type something.">
+	<div>
+	<span for="result">You typed:</span>
+	<span id="result"></span>
+	</div>
+	
+	<script>
+		var util = { };		
+		util.key = { 
+		  9: "tab",
+		  13: "enter",
+		  16: "shift",
+		  18: "alt",
+		  27: "esc",
+		  32: "space",
+		  33: "pageUp",
+		  34: "pageDown",
+		  35: "end",
+		  36: "home",
+		  37: "left",
+		  38: "up",
+		  39: "right",
+		  40: "down",
+		  112: "F1",
+		  113: "F2",
+		  114: "F3",
+		  115: "F4",
+		  116: "F5",
+		  117: "F6",
+		  118: "F7",
+		  119: "F8",
+		  120: "F9",
+		  121: "F10",
+		  122: "F11",
+		  123: "F12"
+		};
+		document.addEventListener('keydown', function(e) {
+		    var key = util.key[e.which];
+		    if( !key ) {
+		    	key = String.fromCharCode(e.which);
+		    }
+		    var result = (e.ctrlKey ? "ctrl + " : "") + (e.altKey ? "alt + " : "") + (e.shiftKey ? "shift + " : "") + key;
+			document.getElementById("result").textContent = result;
+		    e.preventDefault();
+		});
+	</script>	
+</body>
+</html>
