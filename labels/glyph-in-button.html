@@ -15,7 +15,7 @@
 		    height: 32px;
 		    width: 32px;
 		}
-		li button {
+		li button span {
 		    height: 24px;
 		    width: 24px;
 		}
@@ -23,20 +23,12 @@
 </head>
 <body>
 	<h1>Glyph in button test</h1>
-	<h2>Black Suits</h2>
+	<h2>Card Suits</h2>
 	<ul>
-		<li><button>&#9824;</button></li>
-		<li><button>&#9829;</button></li>
-		<li><button>&#9830;</button></li>
-		<li><button>&#9827;</button></li>
-	</ul>
-	
-	<h2>White Suits</h2>
-	<ul>
-		<li><button>&#9828;</button></li>
-		<li><button>&#9825;</button></li>
-		<li><button>&#9826;</button></li>
-		<li><button>&#9831;</button></li>
+		<li><button aria-label="spades"><span aria-hidden="true">&#9824;</span></button></li>
+		<li><button aria-label="hearts" style="color:red;"><span aria-hidden="true">&#9829;</span></button></li>
+		<li><button aria-label="diamonds" style="color:red;"><span aria-hidden="true">&#9830;</span></span></button></li>
+		<li><button aria-label="clubs"><span aria-hidden="true">&#9827;</span></button></li>
 	</ul>
 </body>
 </html>
