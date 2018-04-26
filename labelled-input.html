@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Test various ways to label inputs</title>
+	<style>
+		.visuallyhidden {
+		    position: absolute;
+		    left: -9999em;
+		    top: auto;
+		    width: 1px;
+		    height: 1px;
+		    overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<h1>Test various ways to label inputs</h1>
+	<h2>Visible label element as input parent</h2>
+	<div>
+		<label>Name:<input type="text" value="Fred"></label>
+		<label><input type="checkbox" id="check1">Attended</label>
+	</div>
+	<br><h2>Visible label element with for attribute</h2>
+	<div>
+		<label for="text1">Name:</label><input type="text" id="text1" value="Fred">
+		<input type="checkbox" id="check1"><label for="check1">Attended</label>
+	</div>
+	<br><h2>Invisible (offscreen) label element with for attribute</h2>
+	<div>
+		<label for="text2">Name:</label><input type="text" id="text2" value="Fred">
+		<input type="checkbox" id="check2"><label for="check2" class="visuallyhidden">Attended</label>
+	</div>
+	<br><h2>Visible span element with aria-labelledby attribute</h2>
+	<div>
+		<span id="text3">Name:</span><input type="text" value="Fred" aria-labelledby="text3">
+		<input type="checkbox" aria-labelledby="check3"><span id="check3">Attended</span>
+	</div>
+	<br><h2>Invisible aria-label attribute</h2>
+	<div>
+		<input type="text" value="Fred" aria-label="Name:">
+		<input type="checkbox" aria-label="Attended">
+	</div>
+	<br><h2>Labelled by column header in table</h2>
+	<div>
+		<table>
+			<th scope="col">Name</th>
+			<th scope="col">Attended</th>
+			<tr>
+			<td><input type="text" value="Fred"></td>
+			<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+			<td><input type="text" value="Wilma"></td>
+			<td><input type="checkbox"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
