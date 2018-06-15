@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>issue 798</title>
+	<style>
+		[role="img"] {
+			height: 40px;
+			width: 200px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+<main>
+	<h1>issue 798</h1>
+
+	<h2>this img has an aria-label but fails g1128</h2>
+	<div role="img" aria-label="My Image">
+		<div>image-related stuff goes here</div>
+	</div>
+
+	<h2 id="fail-message">this img has an aria-labelledby but fails g1128</h2>
+	<div role="img" aria-labelledby="fail-message">
+		<div>image-related stuff goes here</div>
+	</div>
+</main>
+</body>
+</html>

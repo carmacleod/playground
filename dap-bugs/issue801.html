@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>issue 802</title>
+	<style>
+		[role="menubar"] {
+			list-style: none;
+		}
+		[role="menuitem"] {
+			margin: 2px;
+			padding: 4px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+<main>
+	<h1>issue 802</h1>
+
+	<h2>the menuitems are allowed to have aria-expanded but they fail g1158</h2>
+	<ul role="menubar">
+		<span role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+			<span>File</span>
+			<!-- a list of menu items would go here when expanded is true -->
+		</span>
+		<span role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+			<span>Edit</span>
+			<!-- a list of menu items would go here when expanded is true -->
+		</span>
+	</ul>
+</main>
+</body>
+</html>
