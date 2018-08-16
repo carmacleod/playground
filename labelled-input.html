@@ -42,7 +42,7 @@
 		<input type="text" value="Fred" aria-label="Name:">
 		<input type="checkbox" aria-label="Attended">
 	</div>
-	<br><h2>Labelled by column header in table</h2>
+	<br><h2>Incorrect markup: Checkbox table cells labelled by column header</h2>
 	<div>
 		<table>
 			<caption>Attendance</caption>
@@ -55,6 +55,38 @@
 			<tr>
 			<td>Wilma</td>
 			<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+			<td>Barney</td>
+			<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+			<td>Betty</td>
+			<td><input type="checkbox"></td>
+			</tr>
+		</table>
+	</div>
+	<br><h2>Checkbox table cells use aria-labelledby to point to column header</h2>
+	<div>
+		<table>
+			<caption>Attendance</caption>
+			<th scope="col">Name</th>
+			<th scope="col" id="attended">Attended</th>
+			<tr>
+			<td scope="row">Fred</td>
+			<td><input type="checkbox" aria-labelledby="attended"></td>
+			</tr>
+			<tr>
+			<td scope="row">Wilma</td>
+			<td><input type="checkbox" aria-labelledby="attended"></td>
+			</tr>
+			<tr>
+			<td scope="row">Barney</td>
+			<td><input type="checkbox" aria-labelledby="attended"></td>
+			</tr>
+			<tr>
+			<td scope="row">Betty</td>
+			<td><input type="checkbox" aria-labelledby="attended"></td>
 			</tr>
 		</table>
 	</div>
