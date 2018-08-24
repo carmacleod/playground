@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>inline vs block</title>
+</head>
+<body>
+	<h1>inline vs block</h1>
+	<p>The following 3 divs are read as separate letters, c, a, t, with JAWS/NVDA on Chrome/Firefox/IE:</p>
+	<div>c</div><div>a</div><div>t</div>
+
+	<p>The following 3 inline style divs are read as a single word, cat, with JAWS/NVDA on Chrome/Firefox/IE:</p>
+	<div style="display:inline">c</div><div style="display:inline">a</div><div style="display:inline">t</div>
+
+	<p>The following 3 spans are read as a single word, cat, with JAWS/NVDA on Chrome/Firefox/IE:</p>
+	<span>c</span><span>a</span><span>t</span>
+
+	<p>Oddly, the following 3 block style spans are read as a single word, cat, with JAWS/NVDA on Chrome/Firefox/IE:</p>
+	<span style="display:block">c</span><span style="display:block">a</span><span style="display:block">t</span>
+</body>
+</html>
