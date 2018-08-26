@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>inline vs block</title>
+	<title>Test</title>
 </head>
 <body>
-	<h1>inline vs block</h1>
-	<p>The following 3 divs are read as separate letters, c, a, t, with JAWS/NVDA on Chrome/Firefox/IE:</p>
+	<p>Divs:</p>
 	<div>c</div><div>a</div><div>t</div>
 
-	<p>The following 3 inline style divs are read as a single word, cat, with JAWS/NVDA on Chrome/Firefox/IE:</p>
-	<div style="display:inline">c</div><div style="display:inline">a</div><div style="display:inline">t</div>
+	<p>Inline divs:</p>
+	<div style="display:inline">d</div><div style="display:inline">o</div><div style="display:inline">g</div>
 
-	<p>The following 3 spans are read as a single word, cat, with JAWS/NVDA on Chrome/Firefox/IE:</p>
-	<span>c</span><span>a</span><span>t</span>
+	<p>Spans:</p>
+	<span>c</span><span>o</span><span>w</span>
 
-	<p>Oddly, the following 3 block style spans are read as a single word, cat, with JAWS/NVDA on Chrome/Firefox/IE:</p>
-	<span style="display:block">c</span><span style="display:block">a</span><span style="display:block">t</span>
-</body>
+	<p>Block spans:</p>
+	<span style="display:block">p</span><span style="display:block">i</span><span style="display:block">g</span>
+	
+	<p>Styled spans:</p>
+	<div><span>Price:</span><span style="padding-left:4px">$4</span><span style="vertical-align: super; font-size: 70%;">99</span></div>
+
+	<p>Styled spans with aria-label on parent div:</p>
+	<div aria-label="Price: $4.99"><span>Price:</span><span style="padding-left:4px">$4</span><span style="vertical-align: super; font-size: 70%;">99</span></div>
 </html>
