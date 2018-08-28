@@ -15,21 +15,45 @@
 	</style>
 </head>
 <body>
-	<h1>Table with checkbox column</h1>
-	<p>
-		Table with checkboxes (with varied markup) in one column.<br>
-		Do screen readers say column header for each checkbox cell?
-	</p>
+	<main>
+	<h1>Table with checkboxes in one column</h1>
 	<table>
+		<caption>Bedrock Bowling Club Registration</caption>
 		<thead>
-			<tr><th id="fname" scope="col">First name	<th id="lname" scope="col">Last name	<th id="addr" scope="col">Address	<th id="paid" scope="col">Paid</tr>
+			<tr>
+				<th scope="col">First name</th>
+				<th scope="col">Last name</th>
+				<th scope="col">Address</th>
+				<th scope="col" id="paid">Paid</th>
+			</tr>
 		</thead>
 		<tbody>
-			<tr><td headers="fname">Fred		<td headers="lname">Flintstone	<td headers="addr">301 Cobblestone Way	<td headers="paid"><input type="checkbox"></tr>
-			<tr><td headers="fname">Wilma		<td headers="lname">Flintstone	<td headers="addr">301 Cobblestone Way	<td headers="paid"><label><input type="checkbox"></label></tr>
-			<tr><td headers="fname">Barney		<td headers="lname">Rubble		<td headers="addr">303 Cobblestone Way	<td headers="paid"><label aria-labelledby="paid"><input type="checkbox"></label></tr>
-			<tr><td headers="fname">Betty		<td headers="lname">Rubble		<td headers="addr">303 Cobblestone Way	<td headers="paid"><label><input type="checkbox" aria-labelledby="paid"></label></tr>
+			<tr>
+				<td>Fred</td>
+				<td>Flintstone</td>
+				<td>301 Cobblestone Way</td>
+				<td><input type="checkbox" aria-labelledby="paid"></td>
+			</tr>
+			<tr>
+				<td>Wilma</td>
+				<td>Flintstone</td>
+				<td>301 Cobblestone Way</td>
+				<td><input type="checkbox" aria-labelledby="paid"></td>
+			</tr>
+			<tr>
+				<td>Barney</td>
+				<td>Rubble</td>
+				<td>303 Cobblestone Way</td>
+				<td><input type="checkbox" aria-labelledby="paid"></td>
+			</tr>
+			<tr>
+				<td>Betty</td>
+				<td>Rubble</td>
+				<td>303 Cobblestone Way</td>
+				<td><input type="checkbox" aria-labelledby="paid"></td>
+			</tr>
 		</tbody>
 	</table>
+	</main>
 </body>
 </html>
