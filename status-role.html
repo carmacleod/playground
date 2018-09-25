@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Status role test</title>
+	<script>
+		function updateCount () {
+			var something = document.getElementById("textinput").value;
+			document.getElementById("charcount").innerHTML = "There are " + something.length + " characters in " + something;
+		}
+	</script>
+</head>
+<body>
+	<h1>Status Role Test</h1>
+	<label for="textinput">Type something: </label>
+	<input type="text" id="textinput">
+	<button onclick="updateCount()">Count Characters</button>
+	<hr>
+	<p role="status" id="charcount"></p>
+</body>
+</html>
