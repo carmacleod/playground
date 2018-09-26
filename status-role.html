@@ -6,7 +6,7 @@
 	<script>
 		function updateCount () {
 			var something = document.getElementById("textinput").value;
-			document.getElementById("charcount").innerHTML = "There are " + something.length + " characters in " + something;
+			document.getElementById("charcount").textContent = "There are " + something.length + " characters in \"" + something + "\"";
 		}
 	</script>
 </head>
