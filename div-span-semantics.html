@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>div and span semantics</title>
+	<style>
+		div {border: 1px solid darkred;}
+		span {border: 1px dotted black;}
+	</style>
+</head>
+<body>
+	<p>div with no content</p>
+	<div></div>
+
+	<p>span with no content</p>
+	<span></span>
+
+	<p>div with text content</p>
+	<div>text content</div>
+
+	<p>span with text content</p>
+	<span>text content</span>
+
+	<p>div with no content with child div with text content</p>
+	<div><div>text content</div></div>
+
+	<p>div with no content with child span with text content</p>
+	<div><span>text content</span></div>
+
+	<p>span with no content with child span with text content</p>
+	<span><span>text content</span></span>
+
+	<p>div with text content with child div with text content</p>
+	<div>before<div>text content</div>after</div>
+
+	<p>div with text content with child span with text content</p>
+	<div>before<span>text content</span>after</div>
+
+	<p>span with text content with child span with text content</p>
+	<span>before<span>text content</span>after</span>
+
+	<p>div with text content with child button with text content</p>
+	<div>before<button>text content</button>after</div>
+
+	<p>div with text content with child button with text content</p>
+	<div>before<button>text content</button>after</div>
+
+	<p>span with text content with child button with text content</p>
+	<span>before<button>text content</button>after</span>
+</html>
