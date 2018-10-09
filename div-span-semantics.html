@@ -6,6 +6,8 @@
 	<style>
 		div {border: 1px solid darkred;}
 		span {border: 1px dotted black;}
+		.beforeafter::before {content: "before";}
+		.beforeafter::after {content: "after";}
 	</style>
 </head>
 <body>
@@ -30,21 +32,33 @@
 	<p>span with no content with child span with text content</p>
 	<span><span>text content</span></span>
 
-	<p>div with text content with child div with text content</p>
-	<div>before<div>text content</div>after</div>
+	<p>div with leading/trailing text content around child div with text content</p>
+	<div>leading<div>text content</div>trailing</div>
 
-	<p>div with text content with child span with text content</p>
-	<div>before<span>text content</span>after</div>
+	<p>div with leading/trailing text content around child span with text content</p>
+	<div>leading<span>text content</span>trailing</div>
 
-	<p>span with text content with child span with text content</p>
-	<span>before<span>text content</span>after</span>
+	<p>div with leading/trailing text content around child button with text content</p>
+	<div>leading<button>text content</button>trailing</div>
 
-	<p>div with text content with child button with text content</p>
-	<div>before<button>text content</button>after</div>
+	<p>span with leading/trailing text content around child button with text content</p>
+	<span>leading<button>text content</button>trailing</span>
+	
+	<p>div with before/after content</p>
+	<div class="beforeafter"></div>
 
-	<p>div with text content with child button with text content</p>
-	<div>before<button>text content</button>after</div>
+	<p>span with before/after content</p>
+	<span class="beforeafter"></span>
 
-	<p>span with text content with child button with text content</p>
-	<span>before<button>text content</button>after</span>
+	<p>div with text content and before/after content</p>
+	<div class="beforeafter">text content</div>
+
+	<p>span with text content and before/after content</p>
+	<span class="beforeafter">text content</span>
+
+	<p>div with no content with tabindex="-1"</p>
+	<div tabindex="-1"></div>
+
+	<p>span with no content with tabindex="-1"</p>
+	<span tabindex="-1"></span>
 </html>
