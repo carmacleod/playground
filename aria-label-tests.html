@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>aria-label tests</title>
+	<style>
+		.at-image::before {
+			content: url("at.png");
+		}
+		.dot-image::before {
+			content: url("dot.png");
+		}
+		.hide-text {
+			font-size: 0;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>aria-label tests</h1>
+		
+		<h2>1a. Empty div with an aria-label</h2>
+		<div aria-label="Hello"></div>
+
+		<h2>1b. Text content div with an aria-label</h2>
+		<div aria-label="Hello">Goodbye</div>
+
+		<h2>2a. Empty span with an aria-label</h2>
+		<span aria-label="Hello"></span>
+
+		<h2>2b. Text content span with an aria-label</h2>
+		<span aria-label="Hello">Goodbye</span>
+
+		<h2>3. Span children with an aria-label on parent div</h2>
+		<div aria-label="Screen reader price: $4.99">
+			<span>Price:</span>
+			<span style="padding-left: 4px;">$4</span>
+			<span style="vertical-align: super; font-size: 70%;">99</span>
+		</div>
+	
+		<h2>4a. Siemenskun's example 1 (avoid .screen-reader-text class) in aria#756</h2>
+		<span aria-label="Hello, I'm some text for screen reader users."></span>
+
+		<h2>4b. Siemenskun's example 2 (make sense of ASCII art) in aria#756</h2>
+		<div aria-label="an ASCII-art kitten"><pre>
+                   |\___/|
+                   ) e e (
+                  =\  Y  /=
+                    )===(
+		</pre></div>
+		
+		<h2>4c. Siemenskun's example 3 (make sense of bot blocking) in aria#756</h2>
+		<div>webmaster<span class="at-image hide-text" aria-label="@">goawayrandommailcrawler</span>example<span class="dot-image hide-text" aria-label=".">34534gfd</span>com</div>
+
+		<h2>5a. Jamie's github example</h2>
+		<span class="timeline-comment-label tooltipped" aria-label="This user has previously committed to the nvda repository.">
+			Contributor
+		</span>
+		
+		<h2>5b. Jamie's bold table cell example</h2>
+		<div role="table">
+			<div role="row">
+				<div role="cell">browser.urlbar.autoFill</div>
+				<div role="cell" aria-label="false (user specified)"><b>false</b></div>
+			</div>
+		</div>
+
+		<h2>5c. Jamie's div with children</h2>
+		<div aria-label="label">
+			<h3>Heading</h3>
+			<button>Button</button>
+		</div>
+		
+		<h2>5d. Jamie's message list</h2>
+		<ul>
+			<li aria-labelledby="author message">
+				<span id="author">Jamie</span>
+				<span id="message">Some message <a href="#">with a link</a></span>
+				<button>Reply</button>
+			</li>
+			<li aria-labelledby="author2 message2">
+				<span id="author2">Car</span>
+				<span id="message2">Some message <a href="#">with a link</a></span>
+				<button>Reply</button>
+			</li>
+		</ul>
+		
+		<h2>6. garconvacher's International Phonetic Alphabet example in aria#756</h2>
+		<p>[<span aria-label="IPA: banana">bəˈnɑːnə</span>] est la prononciation du mot "banane" en anglais.</p>
+	</main>
+</body>
+</html>
