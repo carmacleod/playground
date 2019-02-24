@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Combo Test</title>
+</head>
+<body>
+	<main>
+		<h1>Combo Test</h1>
+		<p>
+			<p><button>Before</button></p>
+			<span id="comboLabel">Combo Label:</span>
+			<span role="combobox" aria-haspopup="dialog" aria-expanded="true" aria-labelledby="comboLabel comboText" aria-owns="comboDropdown" aria-readonly="true">
+				<input id="comboText" type="text" role="textbox" readonly value="combo textbox" aria-controls="comboDropdown"></input>
+			</span>
+			<div id="comboDropdown" role="dialog" aria-labelledby="comboText">
+				<p>Dialog content here</p>
+			</div>
+			<p><button>After</button></p>
+		</p>
+	</main>
+</body>
+</html>
