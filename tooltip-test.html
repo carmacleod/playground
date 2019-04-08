@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tooltip test</title>
+	<style>
+		.tooltip-trigger {
+			font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			background: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: 0;
+			padding: 0;
+			align-items: center;
+			font-size: 1rem;
+		}
+		.tooltip {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+			position: absolute;
+			display: none;
+			max-width: 15rem;
+			background: #fff;
+			margin-top: 0.25rem;
+			padding: 1rem;
+			border: 1px solid #dfe3e6;
+			border-radius: 0.25rem;
+			z-index: 10000;
+			word-wrap: break-word;
+			color: #152935;
+		}
+		.tooltip-visible {
+			display: block
+		}
+		.tooltip .tooltip-tail {
+			position: absolute;
+			background: #fff;
+			left: 0;
+			top: -0.3125rem;
+			right: 0;
+			-webkit-transform: rotate(-135deg);
+			transform: rotate(-135deg);
+			width: 0.6rem;
+			height: 0.6rem;
+			border-right: 1px solid #dfe3e6;
+			border-bottom: 1px solid #dfe3e6;
+			margin: 0 auto;
+			content: '';
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Tooltip test</h1>
+		<p>
+			The following input field may need further explanation for new users,<br>so they can click the <code>Info</code> button to see the tooltip.
+		</p>
+		<label>Input field:<input type="text"></label>
+		<button type="button" id="trigger-id" class="tooltip-trigger" aria-label="Info" aria-expanded="false">
+			<svg fill-rule="evenodd" height="16" viewBox="0 0 16 16" width="16">
+				<path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 4c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm2 8H6v-1h1V8H6V7h3v4h1v1z"></path>
+			</svg>
+		</button>
+		<div id="tooltip-id" class="tooltip" role="tooltip">
+			<span class="tooltip-tail"></span>
+			<p>This tooltip text describes the input field. When the tooltip is visible, the <code>Info</code> button uses aria-describedby to point to it.</p>
+		</div>
+	</main>
+	<script>
+		let trigger = document.getElementById("trigger-id");
+		let tooltip = document.getElementById("tooltip-id");
+		trigger.onclick = toggleTooltip;
+		trigger.onblur = hideTooltip;
+		trigger.onkeydown = keydown;
+		function toggleTooltip() {
+			if (tooltip.classList.contains("tooltip-visible")) {
+				hideTooltip();
+			} else {
+				showTooltip();
+			}
+		}
+		function showTooltip() {
+			trigger.setAttribute("aria-describedby", "tooltip-id");
+			var rect = trigger.getBoundingClientRect();
+			var top = rect.bottom + window.scrollY;
+			var left = rect.left + (rect.right - rect.left) / 2 + window.scrollX;
+			tooltip.classList.add("tooltip-visible");
+			rect = tooltip.getBoundingClientRect();
+			left -= (rect.right - rect.left) / 2;
+			tooltip.style = "top: " + top + "px; left: " + left + "px;";
+		}
+		function hideTooltip() {
+			tooltip.classList.remove("tooltip-visible");
+			tooltip.style = "";
+			trigger.removeAttribute("aria-describedby");
+		}
+		function keydown(e) {
+			if (e.keyCode === 27) { // ESC
+				hideTooltip();
+				e.stopPropagation();
+				e.preventDefault();
+			}
+		}
+	</script>
+</body>
+</html>
