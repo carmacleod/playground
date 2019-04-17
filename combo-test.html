@@ -3,21 +3,41 @@
 <head>
 	<meta charset="utf-8">
 	<title>Combo Test</title>
+	<style>
+		.border {
+			border: 1px solid black;
+		}
+	</style>
 </head>
 <body>
 	<main>
 		<h1>Combo Test</h1>
-		<p>
-			<p><button>Before</button></p>
-			<span id="comboLabel">Combo Label:</span>
-			<span role="combobox" aria-haspopup="dialog" aria-expanded="true" aria-labelledby="comboLabel comboText" aria-owns="comboDropdown" aria-readonly="true">
-				<input id="comboText" type="text" role="textbox" readonly value="combo textbox" aria-controls="comboDropdown"></input>
-			</span>
-			<div id="comboDropdown" role="dialog" aria-labelledby="comboText">
-				<p>Dialog content here</p>
-			</div>
-			<p><button>After</button></p>
-		</p>
+		<span id="combo_label1">Combo 1:</span>
+		<div role="combobox" aria-labelledby="combo_label1" aria-expanded="true" aria-owns="owned_listbox1" aria-haspopup="listbox">
+			<input type="text" aria-autocomplete="list" aria-controls="owned_listbox1" aria-activedescendant="selected_option1">
+			<span class="border" aria-hidden="true">&#9660;</span>
+		</div>
+		<ul role="listbox" id="owned_listbox1">
+			<li role="option" id="selected_option1">Animal</li>
+			<li role="option">Apple</li>
+		</ul>
+
+		<span id="combo_label2">Combo 2:</span>
+		<div role="combobox" aria-labelledby="combo_label2" aria-expanded="true" aria-owns="owned_listbox2" aria-haspopup="listbox" aria-readonly="true">
+			<input type="text" readonly aria-autocomplete="list" aria-controls="owned_listbox2" aria-activedescendant="selected_option2">
+			<span class="border" aria-hidden="true">&#9660;</span>
+		</div>
+		<ul role="listbox" id="owned_listbox2">
+			<li role="option">Zebra</li>
+			<li role="option" id="selected_option2">Zoom</li>
+		</ul>
+		
+		<label id="combo_label3">Combo 3:</label>
+		<div tabindex="0" role="combobox" aria-readonly="true" aria-haspopup="dialog" aria-expanded="true" aria-labelledby="combo_label3 textbox3" aria-owns="owned_dialog3">
+		<span id="textbox3" class="border" role="textbox" aria-readonly="true">Value from Dialog</span>
+		<span class="border" aria-hidden="true">&#9660;</span>
+		</div>
+		<div id="owned_dialog3" tabindex="-1" role="dialog" aria-labelledby="textbox3">Dialog content for setting value goes here</div>
 	</main>
 </body>
 </html>
