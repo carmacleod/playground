@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>details summary test</title>
+</head>
+<body>
+  <main>
+    <h1>details summary test</h1>
+    <p>
+      <details open>
+        <summary>This is the Summary element</summary>
+        <p>This is the content of the Details element.<br>
+        The label for this paragraph of Details is in fact the Summary element.<br>
+        So DAP should not say that this Details element needs an aria-label[ledby] because this already has a label.
+        </p>
+      </details>
+    </p>
+  </main>
+</body>
+</html>
