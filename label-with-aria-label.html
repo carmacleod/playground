@@ -8,24 +8,29 @@
 	<main>
 		<h1>Label elements with aria-label</h1>
 
-		<h2>label for=text aria-label="Label1"</h2>
+		<h2>1. label for=text aria-label="Label1" (input sibling)</h2>
 		<p>
 			<label for="text1" aria-label="Label1"></label>
 			<input type="text" id="text1">
 		</p>
 		
-		<h2>label aria-label="Label2" with text input child</h2>
+		<h2>2. label aria-label="Label2" (input child)</h2>
 		<p>
 			<label aria-label="Label2">
 				<input type="text">
 			</label>
 		</p>
 
-		<h2>label with text input child with aria-label="Label3"</h2>
+		<h2>3. empty label containing input aria-label="Label3"</h2>
 		<p>
 			<label>
 				<input type="text" aria-label="Label3">
 			</label>
+		</p>
+
+		<h2>4. input aria-label="Label4" (no label)</h2>
+		<p>
+			<input type="text" aria-label="Label4">
 		</p>
 	</main>
 </body>
