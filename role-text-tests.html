@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tests: no role, role=img, role=text</title>
+	<style>
+		.at-image::before {
+			content: url("at.png");
+		}
+		.dot-image::before {
+			content: url("dot.png");
+		}
+		.hide-text {
+			font-size: 0;
+		}
+	</style>
+</head>
+<body>
+  <main>
+    <h1>Tests: no role, role=img, role=text</h1>
+    <p>Each of the h2 sections below contains 3 almost identical code snippets, except that the first has no role or aria-label, the next uses role=img with an aria-label that describes the image, and the last uses role=text with an aria-label that has the desired text.</p>
+    <section>
+      <h2>Classic example of specifying desired text for symbols (span within paragraph)</h2>
+      <p>I <span>❤️</span> New York</p>
+      <p>I <span role="img" aria-label="heart">❤️</span> New York</p>
+      <p>I <span role="text" aria-label="love">❤️</span> New York</p>
+    </section>
+    <section>
+      <h2>Another example specifying desired text for symbols (span within list item)</h2>
+      <ol>
+        <li>Your answer: Nasal cannula. <span>✓</span></li>
+        <li>Your answer: Morphine. <span>❌</span></li>
+      </ol>
+      <ol>
+        <li>Your answer: Nasal cannula. <span role="img" aria-label="checkmark">✓</span></li>
+        <li>Your answer: Morphine. <span role="img" aria-label="cross mark">❌</span></li>
+      </ol>
+      <ol>
+        <li>Your answer: Nasal cannula. <span role="text" aria-label="correct">✓</span></li>
+        <li>Your answer: Morphine. <span role="text" aria-label="incorrect">❌</span></li>
+      </ol>
+    </section>
+    <section>
+      <h2>International Phonetic Alphabet (English and French spans within paragraph)</h2>
+      <p><span lan=en>IPA: /bəˈnɑːnə/</span> <span lang=fr>est la prononciation du mot banane en anglais.</span></p>
+      <p><span lan=en role="img" aria-label="IPA: banana">IPA: /bəˈnɑːnə/</span> <span lang=fr>est la prononciation du mot banane en anglais.</span></p>
+      <p><span lan=en role="text" aria-label="banana">IPA: /bəˈnɑːnə/</span> <span lang=fr>est la prononciation du mot banane en anglais.</span></p>
+    </section>
+    <section>
+      <h2>ASCII art (div containing pre)</h2>
+      <div><pre>
+                     |\___/|
+                     ) e e (
+                    =\  Y  /=
+                      )===(
+      </pre></div>
+      <div role="img" aria-label="an ASCII-art kitten"><pre>
+                     |\___/|
+                     ) e e (
+                    =\  Y  /=
+                      )===(
+      </pre></div>
+      <div role="text" aria-label="kitten"><pre>
+                     |\___/|
+                     ) e e (
+                    =\  Y  /=
+                      )===(
+      </pre></div>
+    </section>
+    <section>
+      <h2>Screen reader only text (without CSS offscreen element) (div - note that some or all of the divs in this section may not be read)</h2>
+      <div></div>
+      <div role="img" aria-label="Hello, I'm some text for screen reader users."></div>
+      <div role="text" aria-label="Hello, I'm some text for screen reader users."></div>
+    </section>
+    <section>
+      <h2>Clarifying visually clear content for screen reader users (div containing spans)</h2>
+      <div>
+      	<span>Price: $4</span><span style="vertical-align: super; font-size: 70%;">99</span>
+      </div>
+      <div role="img" aria-label="Price: $4 99">
+      	<span>Price: $4</span><span style="vertical-align: super; font-size: 70%;">99</span>
+      </div>
+      <div role="text" aria-label="Price: $4 99">
+      	<span>Price: $4</span><span style="vertical-align: super; font-size: 70%;">99</span>
+      </div>
+    </section>
+    <section>
+      <h2>Clarifying visually clear "bot blocking" obfuscation (div containing spans)</h2>
+      <div>webmaster<span class="at-image hide-text">goawayrandommailcrawler</span>example<span class="dot-image hide-text">34534gfd</span>com</div>
+      <div>webmaster<span role="img" class="at-image hide-text" aria-label="@">goawayrandommailcrawler</span>example<span role="img" class="dot-image hide-text" aria-label=".">34534gfd</span>com</div>
+      <div>webmaster<span role="text" class="at-image hide-text" aria-label="@">goawayrandommailcrawler</span>example<span role="text" class="dot-image hide-text" aria-label=".">34534gfd</span>com</div>
+    </section>
+  </main>
+</body>
+</html>
