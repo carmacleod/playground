@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Textbox value tests</title>
+  <style>
+    div[role="textbox"] {width: 400px; border: 1px solid black;}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Textbox value tests</h1>
+    <div>
+      <label>Text input with no initial value:
+        <input type="text">
+      </label>
+    </div>
+    <br>
+    <div>
+      <label>Text input with initial value:
+        <input type="text" value="Initial value">
+      </label>
+    </div>
+    <br>
+    <div>
+      <label>Text input with placeholder:
+        <input type="text" placeholder="Placeholder">
+      </label>
+    </div>
+    <br>
+    <div>
+      <div id="custom-label1">Custom textbox using div with contenteditable:</div>
+      <div contenteditable="true" role="textbox" aria-labelledby="custom-label1">Initial value</div>
+    </div>
+    <br>
+    <div>
+      <div id="custom-label2">Custom read-only textbox using div with aria-readonly:</div>
+      <div tabindex="0" role="textbox" aria-readonly="true" aria-labelledby="custom-label2">Initial value</div>
+     </div>
+  </main>
+</body>
+</html>
