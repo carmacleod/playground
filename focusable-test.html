@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>focusable test</title>
+</head>
+<body>
+  <main>
+    <h1>focusable?</h1>
+    <div aria-hidden="true">
+      <a href="#" tabindex="-1">foo</a> <!-- this is focusable -->
+      <input tabindex="-1"> <!-- so is this, right? -->
+    </div>
+  </main>
+</body>
+</html>
