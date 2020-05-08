@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>aria-hidden tests</title>
+</head>
+<body>
+  <main>
+    <h1>aria-hidden tests on p and span elements</h1>
+    <p id="a" aria-hidden="true">test 1 aria-hidden=true</p>
+    
+    <p id="b" hidden>test 2 HTML hidden</p>
+    
+    <p id="c" style="display:none">test 3 CSS display:none</p>
+    
+    <p id="d" style="visibility:hidden">test 4 CSS visibility:hidden</p>
+    
+    <p id="e" style="position:absolute;left:-9999px">test 5 CSS off screen</p>
+    
+    <p id="f" style="position:absolute;left:-9999px" aria-hidden="true">test 6 CSS off screen aria-hidden=true</p>
+    
+    <p id="g" hidden aria-hidden="false">test 7 HTML hidden aria-hidden=false</p>
+    
+    <p id="h" style="display:none" aria-hidden="false">test 8 CSS display:none aria-hidden=false</p>
+    
+    <p id="i" style="visibility:hidden" aria-hidden="false">test 9 CSS visibility:hidden aria-hidden=false</p>
+    
+    <p id="j" hidden><span aria-hidden="false">patrick is a nice guy; he shares his chair</span> test 10 HTML hidden with aria-hidden=false on child element</p>
+    
+    <p id="k" aria-hidden="true"><span aria-hidden="false">test 11 aria-hidden=true with aria-hidden=false on child element</span></p>
+  </main>
+</body>
+</html>
