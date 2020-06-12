@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Radio buttons with aria-expanded</title>
+  <title>Radio button with aria-expanded</title>
   <style>
-    input[type="radio"][aria-controls] ~ input[type="text"] {
+    input[type="radio"][aria-controls] + label + input[type="text"] {
       display: none;
     }
-    input[type="radio"][aria-controls]:checked ~ input[type="text"] {
+    input[type="radio"][aria-controls]:checked + label + input[type="text"] {
       display: inline;
     }
   </style>
@@ -15,7 +15,7 @@
 
 <body>
   <main>
-    <h1>Radio buttons with aria-expanded</h1>
+    <h1>Radio button with aria-expanded</h1>
     <p>NOTE: Currently only supported in NVDA/FF, VO/Safari and VO/iOS Safari.</p>
 
     <h2>Single radio with aria-expanded</h2>
@@ -29,18 +29,21 @@
       <input type="radio" name="heardFrom" id="other" aria-controls="otherText" aria-expanded="false">
       <label for="other" id="otherLabel"> Other: </label>
       <input type="text" name="heardFrom" id="otherText" autocomplete="off" aria-labelledby="otherLabel">
-    </fieldset><br>
+    </fieldset>
 
     <h2>Multiple radios with aria-expanded</h2>
-    <a href="https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html">gov.uk radios with conditionally revealing content example</a>
+    <ul>
+      <li><a href="radios-expanded-test.html">Multiple radios with aria-expanded</a></li>
+      <li><a href="https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html">gov.uk radios with conditionally revealing content example</a></li>
+    </ul>
   </main>
   
   <script>
-    var otherRadio = document.querySelectorAll('input[type="radio"][aria-controls]')[0];
+    var expandableRadio = document.querySelectorAll('input[type="radio"][aria-controls]')[0];
     var allRadios = document.querySelectorAll('input[type="radio"]');
     for (var i = 0; i < allRadios.length; i++) {
       allRadios[i].addEventListener('change', function() {
-        otherRadio.setAttribute("aria-expanded", otherRadio.checked ? "true" : "false");
+        expandableRadio.setAttribute("aria-expanded", expandableRadio.checked ? "true" : "false");
       });
     }
   </script>

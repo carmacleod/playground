@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Radio buttons with aria-expanded</title>
+  <style>
+    input[type="radio"][aria-controls] + label + input[type="text"] {
+      display: none;
+    }
+    input[type="radio"][aria-controls]:checked + label + input[type="text"] {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Radio buttons with aria-expanded</h1>
+    <p>NOTE: Currently only supported in NVDA/FF, VO/Safari and VO/iOS Safari.</p>
+
+    <h2>Multiple radios with aria-expanded</h2>
+    <fieldset>
+      <legend>How would you prefer to be contacted?</legend>
+      <input type="radio" name="howContact" id="email" aria-controls="emailText" aria-expanded="false">
+      <label for="email" id="emailLabel"> Email: </label>
+      <input type="text" id="emailText" autocomplete="off" aria-labelledby="emailLabel">
+      
+      <br><input type="radio" name="howContact" id="phone" aria-controls="phoneText" aria-expanded="false">
+      <label for="phone" id="phoneLabel"> Phone: </label>
+      <input type="text" id="phoneText" autocomplete="off" aria-labelledby="phoneLabel">
+      
+      <br><input type="radio" name="howContact" id="message" aria-controls="messageText" aria-expanded="false">
+      <label for="message" id="messageLabel"> Text message: </label>
+      <input type="text" id="messageText" autocomplete="off" aria-labelledby="messageLabel">
+    </fieldset><br>
+
+    <h2>Single radio with aria-expanded</h2>
+    <a href="radio-expanded-test.html">Single radio with aria-expanded</a>
+  </main>
+  
+  <script>
+    var expandableRadios = document.querySelectorAll('input[type="radio"][aria-controls]');
+    var allRadios = document.querySelectorAll('input[type="radio"]');
+    for (var i = 0; i < allRadios.length; i++) {
+      allRadios[i].addEventListener('change', function() {
+        for (var j = 0; j < expandableRadios.length; j++) {
+          expandableRadios[j].setAttribute("aria-expanded", expandableRadios[j].checked ? "true" : "false");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
