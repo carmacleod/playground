@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Button tests</title>
+	<style>
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		}
+		li {
+      float: left;
+      margin-left: 4px;
+      margin-top: 4px;
+		  height: 44px;
+		  width: 44px;
+		}
+		svg {
+		  fill: currentColor;
+		  stroke: currentColor;
+		}
+	</style>
+</head>
+<body>
+	<h1>Button tests</h1>
+	<p>None of these buttons actually do anything when activated.</p>
+	<h2>Glyph buttons</h2>
+	<ul>
+		<li><button aria-label="spades"><span aria-hidden="true">&#9824;</span></button></li>
+		<li><button aria-label="hearts" style="color:red;"><span aria-hidden="true">&#9829;</span></button></li>
+		<li><button aria-label="diamonds" style="color:red;"><span aria-hidden="true">&#9830;</span></span></button></li>
+		<li><button aria-label="clubs"><span aria-hidden="true">&#9827;</span></button></li>
+	</ul>
+	<h2>Text button</h2>
+	<button type="button">Shuffle</button>
+	<h2>SVG button</h2>
+	<button type="button" aria-label="play">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10">
+      <polygon points="1 1, 11 5, 1 9"></polygon>
+    </svg>
+  </button>
+	<h2>Text + SVG button</h2>
+	<button type="button" aria-haspopup="true">Shuffle 
+    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9" aria-hidden="true">
+      <polygon points="1 0, 10 0, 5 8"></polygon>
+    </svg>
+  </button>
+</body>
+</html>
