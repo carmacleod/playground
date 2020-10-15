@@ -4,17 +4,35 @@
   <meta charset="utf-8">
   <title>marquee test</title>
   <style>
-    marquee {
+    marquee, [role=marquee] {
       width: 200px;
+    }
+    .fake-marquee {
+      display: inline-block;
+      overflow: hidden;
+      text-align: initial;
+      white-space: nowrap;
+    }
+    div {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <main>
     <h1>marquee test</h1>
-    <p>
-      <span id="marquee-label">Tonight's scores: </span><marquee aria-labelledby="marquee-label">Bears 5 - Bobcats 0; Rangers 2 - Rovers 1; Dingoes 3 - Devils 2</marquee>
-    </p>
+    <div>
+      <span id="marquee-label">Tonight's scores: </span><marquee role="marquee" aria-labelledby="marquee-label">Bears 5 - Bobcats 0; Rangers 2 - Rovers 1; Dingoes 3 - Devils 2</marquee>
+    </div>
+    <div>
+      <marquee role="marquee" aria-label="Headlines:">Giraffes play ball at local zoo; New robot helps with elder care; Top 5 advances in medical science</marquee>
+    </div>
+    <div>
+      <span id="fake-marquee-label">Fake ticker: </span><span role="marquee" class="fake-marquee" aria-labelledby="fake-marquee-label">DOW up 5%; NASDAQ up 5%; S&P 500 up 5%</span>
+    </div>
+    <div>
+      <span role="marquee" class="fake-marquee" aria-label="Message:">Not planning to implement animated scrolling</span>
+    </div>
   </main>
 </body>
 </html>
