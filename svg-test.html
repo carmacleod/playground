@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SVG focusable test</title>
+  <style>
+    button {
+      margin: 4px;
+    }
+    button:focus {
+      outline: 2px solid blue;
+    }
+    svg:focus {
+      outline: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>SVG focusable test</h1>
+    <div>
+      <button>Before</button>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="20" viewBox="0 0 16 20">
+          <polyline points="2,13  2,15 7,20 12,8 12,6 7,17 2,13" fill="currentColor" stroke-width="1" stroke="currentColor"/>
+        </svg>
+        Button with SVG child
+      </button>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" width="16" height="20" viewBox="0 0 16 20">
+          <polyline points="2,13  2,15 7,20 12,8 12,6 7,17 2,13" fill="currentColor" stroke-width="1" stroke="currentColor"/>
+        </svg>
+        Button with SVG focusable=false child
+      </button>
+      <button>After</button>
+    </div>
+  </main>
+</body>
+</html>
