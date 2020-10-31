@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- This example courtesy of Brennan Young in https://github.com/w3c/aria/issues/1346 -->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>test of lang attribute with live regions</title>
+
+	<style>
+	body {
+		background:silver;
+		font-size:120%;
+	}
+	button {
+		font-size:120%;
+	}
+	output {
+		background:white;
+		padding:0.4em;
+		display:block;
+		height:1em;
+		width:30em;
+	}
+	</style>
+
+</head>
+
+<body>
+	<button id="french" lang="fr">Expression française</button>
+	<button id="english" lang="en">An English expression</button>
+	<output id="out"></output>
+</body>
+
+<script>
+let f = document.getElementById("french");
+let e = document.getElementById("english");
+let o = document.getElementById("out");
+f.onclick = function () {
+	o.setAttribute("lang", "fr");
+	o.textContent = "Plus ça change, plus c'est la même chose"
+};
+e.onclick = function () {
+	o.setAttribute("lang", "en");
+	o.textContent = "If you're not part of the solution, you're part of the precipitate"
+};
+</script>
+</html>
