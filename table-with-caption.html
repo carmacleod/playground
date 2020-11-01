@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>table with caption</title>
+  <style>
+    table, th, td {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>table with caption used as description</h1>
+    <h2 id="table-label">Pets in our Kindergarten class</h2>
+    <table aria-labelledby="table-label">
+      <caption>We counted the number of pets our kindergarten students had at home and grouped the pets by animal type!</caption>
+      <tr>
+        <th scope="col">Animal type</th><th scope="col">Number of pets</th>
+      </tr>
+      <tr>
+        <th scope="row">Budgie</th><td>4</td>
+      </tr>
+      <tr>
+        <th scope="row">Cat</th><td>8</td>
+      </tr>
+      <tr>
+        <th scope="row">Dog</th><td>7</td>
+      </tr>
+      <tr>
+        <th scope="row">Ferret</th><td>1</td>
+      </tr>
+      <tr>
+        <th scope="row">Fish</th><td>5</td>
+      </tr>
+      <tr>
+        <th scope="row">Frog</th><td>1</td>
+      </tr>
+    </table>
+  </main>
+</body>
+</html>
