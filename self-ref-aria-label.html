@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>self-referencing an aria-label</title>
+  <style>
+    .visually-hidden:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>self-referencing an aria-label</h1>
+    <p>Discussion in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1159567">Chromium bug 1159567</a>
+    and in the <a href="https://lists.w3.org/Archives/Public/public-aria/2021Jan/0000.html">ARIA mailing list</a>.
+    <br>Want accessible name of input to be "The Label ariaLabel".
+    </p>
+
+    <h2>Using aria-labelledby to reference aria-label on self</h2>
+    <span id="label">The Label</span>
+    <input id="input" aria-label="ariaLabel" aria-labelledby="label input" value="the value">
+
+    <h2>Work-around with .visually-hidden hack</h2>
+    <span id="label">The Label</span>
+    <span id="label2" class="visually-hidden">ariaLabel</span>
+    <input id="input" aria-labelledby="label label2" value="the value">
+    
+    <h2>Work-around with invalid aria-label on empty span</h2>
+    <span id="label">The Label</span>
+    <span id="label2" aria-label="ariaLabel"></span>
+    <input id="input" aria-labelledby="label label2" value="the value">
+  </main>
+</body>
+</html>
