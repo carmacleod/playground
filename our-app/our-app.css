@@ -47,6 +47,30 @@ main {
   grid-area: main;
   background-color: lemonchiffon;
   padding: 25px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto 1fr;
+  grid-gap: .4em;
+  grid-template-areas:
+      "p p"
+      "store playground"
+}
+
+main p {
+  grid-area: p;
+}
+
+section {
+  background-color: violet;
+  padding: .6em
+}
+
+section.store {
+  grid-area: store;
+}
+
+section.playground {
+  grid-area: playground;
 }
 
 aside.advert {
