@@ -19,7 +19,6 @@
       menuitems = document.querySelectorAll('[role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"]');
       var i = 0;
       menuitems.forEach(function (el) {
-        console.log(el);
         el.itemindex = i++;
         el.onkeydown = handleKeydown;
       });
@@ -28,7 +27,6 @@
     window.onload = load;
 
     function handleKeydown(e) {
-      console.log(e.code + ' ' + e.target.itemindex);
       switch (e.code) {
         case 'ArrowDown': focusNextMenuitem(e.target.itemindex); e.preventDefault(); break;
         case 'ArrowUp': focusPreviousMenuitem(e.target.itemindex); e.preventDefault(); break;
@@ -62,7 +60,7 @@
     <ul role="menu" tabindex="-1" aria-label="Table settings">
     	<li role="none">
     		<fieldset aria-labelledby="row-height-label">
-    		  <legend id="row-height-label" role="separator">Row height</legend>
+    		  <legend id="row-height-label">Row height</legend>
   				<div>
   				   <input id="compact" type="radio" name="height" value="compact" role="menuitemradio" tabindex="-1">
   				   <label for="compact">Compact (24px)</label>
@@ -82,25 +80,25 @@
     		</fieldset>
     	</li>
     	<li role="none">
-      	<ul role="group" aria-labelledby="edit-columns-label">
-        	<li id="edit-columns-label" role="separator">Edit columns</li>
-      		<li role="none">
+      	<fieldset aria-labelledby="edit-columns-label">
+        	<legend id="edit-columns-label">Edit columns</legend>
+      		<div>
       			<input id="name" type="checkbox" checked role="menuitemcheckbox" tabindex="-1">
       			<label for="name">Name</label>
-      		</li>
-      		<li role="none">
+      		</div>
+      		<div>
       			<input id="tool_integrations" type="checkbox" role="menuitemcheckbox" tabindex="-1">
       			<label for="tool_integrations">Tool Integrations</label>
-      		</li>
-      		<li role="none">
+      		</div>
+      		<div>
       			<input id="tags" type="checkbox" checked role="menuitemcheckbox" tabindex="-1">
       			<label for="tags">Tags</label>
-      		</li>
-      		<li role="none">
+      		</div>
+      		<div>
       			<input id="status" type="checkbox" checked role="menuitemcheckbox" tabindex="-1">
       			<label for="status">Status</label>
-      		</li>
-      	</ul>
+      		</div>
+      	</fieldset>
     	</li>
     	<li role="none">
         <button type="button" role="menuitem" tabindex="-1">Reset to default</button>
